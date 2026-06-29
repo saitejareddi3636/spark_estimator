@@ -2,7 +2,7 @@
 // Cache-first precache of the app shell + the 2 heavy CDN libs, so the whole
 // app works fully offline after the first visit. Bump CACHE to ship updates.
 
-const CACHE = 'spark-estimator-v1';
+const CACHE = 'spark-estimator-v2';
 
 const PRECACHE = [
   './',
@@ -10,6 +10,7 @@ const PRECACHE = [
   './app.js',
   './data.js',
   './sw.js',
+  './assets/icon-180.png',
   'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js',
   'https://cdn.jsdelivr.net/npm/xlsx-js-style@1.2.0/dist/xlsx.bundle.js',
 ];
