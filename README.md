@@ -3,6 +3,9 @@
 A mobile-first, offline-capable PWA for acquisition agents to estimate repair costs
 room-by-room during a property walkthrough — on a phone, in an empty house, on bad signal.
 
+**Live app:** https://spark-estimator-gamma.vercel.app
+(best on a phone — open it, then use *Add to Home Screen* to install and run offline)
+
 ## What it does
 
 - **Three thumb-reachable modes** (bottom tab bar): **Rooms** (the walkthrough), **Deal** (the
