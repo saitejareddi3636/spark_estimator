@@ -1,0 +1,3 @@
+# transient test artifacts — the suite regenerates these
+.chrome-profile/
+shots/

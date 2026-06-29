@@ -1,0 +1,23 @@
+# Confidential reference material — NEVER commit (per project rules)
+reference/
+
+# Internal build-process scaffolding (kept on disk, excluded from the submission)
+CLAUDE.md
+CHECKLIST.md
+STRATEGY.md
+claudeignore
+
+# OS / editor / tooling junk
+.DS_Store
+.claude/
+.test-live.png
+
+# Test screenshots / artifacts
+tests/shots/
+
+# Generated output
+*.zip
+exports/
+photos/
+*.log
+node_modules/

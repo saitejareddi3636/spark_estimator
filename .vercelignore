@@ -1,0 +1,18 @@
+# Confidential — NEVER deploy
+reference/
+
+# Internal docs / scaffolding — not part of the app
+CLAUDE.md
+CHECKLIST.md
+STRATEGY.md
+WRITEUP.md
+README.md
+claudeignore
+
+# Tests + artifacts — not needed in production
+tests/
+.claude/
+.DS_Store
+.test-live.png
+*.log
+node_modules/
