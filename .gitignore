@@ -7,6 +7,9 @@ CHECKLIST.md
 STRATEGY.md
 claudeignore
 
+# Writeup PDF — submitted by email, not tracked in the repo
+WRITEUP.pdf
+
 # OS / editor / tooling junk
 .DS_Store
 .claude/
@@ -21,3 +24,4 @@ exports/
 photos/
 *.log
 node_modules/
+.vercel

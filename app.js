@@ -553,6 +553,14 @@ function renderGroup(project, room, group) {
 
   const body = document.createElement('div');
   body.className = 'group-body';
+
+  // discoverability hint: the qty / photo / note controls only appear once a row
+  // is checked, so tell the agent that up front.
+  const hint = document.createElement('p');
+  hint.className = 'group-hint';
+  hint.textContent = 'Tap an item to add qty, photo & notes';
+  body.appendChild(hint);
+
   for (const itemId of groupItemIds(project, room, group)) body.appendChild(renderItem(project, room, itemId));
 
   // restore strip — one-tap undo for anything deleted from this group
@@ -564,7 +572,7 @@ function renderGroup(project, room, group) {
       const chip = document.createElement('button');
       chip.type = 'button';
       chip.className = 'restore-chip';
-      chip.textContent = '↺ ' + itemDef(project, id).name;
+      chip.textContent = 'Restore ' + itemDef(project, id).name;
       chip.addEventListener('click', () => {
         delete project.hidden[key(room.id, id)];
         save();
@@ -669,7 +677,7 @@ function renderItem(project, room, itemId) {
 
   const photoBtn = document.createElement('button');
   photoBtn.className = 'photo-btn';
-  photoBtn.innerHTML = '📷 Photo';
+  photoBtn.textContent = 'Add Photo';
   controls.appendChild(photoBtn);
 
   let scanBtn = null;
@@ -677,7 +685,7 @@ function renderItem(project, room, itemId) {
     scanBtn = document.createElement('button');
     scanBtn.type = 'button';
     scanBtn.className = 'photo-btn scan-btn';
-    scanBtn.innerHTML = '🔎 Scan serial #';
+    scanBtn.textContent = 'Scan serial #';
     controls.appendChild(scanBtn);
   }
 
@@ -1156,7 +1164,7 @@ function renderSummaryView(p) {
 
   const exportBtn = document.createElement('button');
   exportBtn.className = 'btn-primary export-cta';
-  exportBtn.textContent = '⬇ Export ZIP (Excel + photos)';
+  exportBtn.textContent = 'Export ZIP (Excel + photos)';
   exportBtn.addEventListener('click', exportZip);
   body.appendChild(exportBtn);
 
@@ -1241,7 +1249,7 @@ function openProjects() {
 
     if (db.projects.length > 1) {
       const del = document.createElement('button');
-      del.className = 'mini'; del.textContent = '🗑'; del.setAttribute('aria-label', 'Delete');
+      del.className = 'mini'; del.textContent = 'Delete'; del.setAttribute('aria-label', 'Delete');
       del.addEventListener('click', () => {
         if (confirm(`Delete project "${p.name}"?`)) {
           db.projects = db.projects.filter((x) => x.id !== p.id);

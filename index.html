@@ -191,11 +191,14 @@
     }
     .unit-cost { font-size: 12px; color: var(--muted); }
     .photo-btn {
-      min-height: var(--tap); padding: 6px 12px; border-radius: 8px;
-      border: 1px solid var(--line); background: var(--surface-2);
+      min-height: var(--tap); padding: 6px 14px; border-radius: 8px;
+      border: 1px solid var(--brand); background: rgba(212,81,1,.12); color: var(--brand);
+      font-weight: 600;
       display: inline-flex; align-items: center; gap: 6px; font-size: 14px;
     }
-    .scan-btn { border-color: var(--brand); color: var(--brand); }
+    .photo-btn:active { background: rgba(212,81,1,.22); }
+    .scan-btn { border-color: var(--brand); color: var(--brand); background: var(--surface-2); }
+    .group-hint { margin: 2px 0 8px; padding-left: 36px; font-size: 12px; color: var(--muted); }
     .note-in {
       width: 100%; margin-top: 8px; min-height: var(--tap); padding: 8px 10px;
       background: var(--surface-2); border: 1px solid var(--line); border-radius: 8px;
@@ -464,7 +467,7 @@
     <!-- Rooms tab: search + room overview / room drill-down -->
     <section class="panel active" id="panelRooms" role="tabpanel" aria-label="Rooms">
       <div class="search-wrap">
-        <span class="s-icon" aria-hidden="true">🔍</span>
+        <span class="s-icon" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line></svg></span>
         <input id="searchInput" type="search" inputmode="search" placeholder="Search all items…" aria-label="Search all items">
         <button class="s-clear" id="searchClear" aria-label="Clear search" hidden>✕</button>
       </div>
@@ -511,7 +514,7 @@
     <ul class="proj-list" id="projList"></ul>
     <button class="btn-primary" id="newProjBtn">＋ New project</button>
     <div class="proj-tools">
-      <button class="btn-ghost" id="importCsvBtn">⇪ Update standard prices (CSV)</button>
+      <button class="btn-ghost" id="importCsvBtn">Update standard prices (CSV)</button>
       <input type="file" id="csvInput" accept=".csv,text/csv" hidden>
       <p class="proj-tools-note" id="globalPriceNote"></p>
     </div>
